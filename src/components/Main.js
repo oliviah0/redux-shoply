@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import uuid from "uuid/v4";
-import ItemContainer from "../containers/ItemContainer"
+import Item from "../components/Item"
 
 class Main extends Component {
   render() {
@@ -12,7 +12,7 @@ class Main extends Component {
       const item = items[id]
       return (
         // this is ownProps on ItemContainer
-        <ItemContainer item={item} id={id} key={id}/>
+        <Item item={item} id={id} key={id}/>
       )
     });
 

@@ -7,17 +7,26 @@ const INITIAL_STATE = { items: data.products, cartItems: {} };
 function rootReducer(state = INITIAL_STATE, action) {
   console.log("reducer ran; state & action:", state, action);
 
+  // let id = action.payload.id
+  let cartItems = { ...state.cartItems }
+
   switch (action.type) {
     case ADD:
-      const newItem = {...action.payload}
-      let cartItems = {...state.cartItems}
-      cartItems[newItem] = cartItems[newItem] + 1 || 1 
+      cartItems[action.payload.id] = cartItems[action.payload.id] + 1 || 1
 
       return { ...state, cartItems: cartItems };
 
-    // case REMOVE:
-    //   return { ...state, count: state.count - 1 };
- 
+    case REMOVE:
+      if (cartItems[action.payload.id]) {
+        cartItems[action.payload.id] = cartItems[action.payload.id] - 1
+        if (cartItems[action.payload.id] <= 0) {
+          delete cartItems[action.payload.id]
+        }
+        return { ...state, cartItems: cartItems };
+      } else {
+        return state
+      }
+
     default:
       return state;
   }
