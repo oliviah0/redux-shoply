@@ -7,7 +7,8 @@ import Main from "../components/Main";
 function mapStateToProps(state) {
   return {
     items: state.items,
-    cartItems: state.cartItems
+    cartItems: state.cartItems,
+    cartTotal: state.cartTotal
   };
 }
 
