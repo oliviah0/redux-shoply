@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import uuid from "uuid/v4";
+import {Link} from "react-router-dom"
 import AddRemoveContainer from "../containers/AddRemoveContainer";
 
 class Item extends Component {
@@ -8,7 +8,7 @@ class Item extends Component {
 
     return (
       <li>
-        {this.props.item.name}
+        <Link to={`/items/${this.props.id}`}> {this.props.item.name} </Link>
         <AddRemoveContainer id={this.props.id}  />
       </li>
     
