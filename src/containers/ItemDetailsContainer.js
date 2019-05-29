@@ -5,11 +5,11 @@ import ItemDetails from "../components/ItemDetails";
 
 
 function mapStateToProps(state, ownProps) {
-  console.log("ZZZZ", ownProps);
 
   let id = ownProps.match.params.id;
   return {
-    item: state.items[id],
+    id: id,
+    item: state.items[id]
   };
 }
 

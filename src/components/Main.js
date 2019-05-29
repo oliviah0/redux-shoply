@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from "react-router-dom"
 import uuid from "uuid/v4";
 import Item from "../components/Item"
 
@@ -25,6 +26,7 @@ class Main extends Component {
         <ul>
           {itemsCards}
         </ul>
+        <Link to="/cart" >go to cart</Link>
       </div>
     );
   }
