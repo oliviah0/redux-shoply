@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import AddRemoveContainer from "../containers/AddRemoveContainer";
 
 class ItemDetails extends Component {
-
   render() {
 
     return (
@@ -13,7 +12,6 @@ class ItemDetails extends Component {
         <AddRemoveContainer id={this.props.id}  />
         <img src={this.props.item.image_url} alt=""/>
       </div>
-    
     );
   }
 }

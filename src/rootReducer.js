@@ -30,7 +30,7 @@ function rootReducer(state = INITIAL_STATE, action) {
     id = action.payload.id;
     cartItems[id] = cartItems[id] + 1 || 1;
     total = calcTotal(state.items, cartItems);
-    return { ...state, cartItems: cartItems, cartTotal: total };
+    return { ...state, cartItems, cartTotal: total };
 
   case REMOVE:
     id = action.payload.id;
@@ -41,7 +41,7 @@ function rootReducer(state = INITIAL_STATE, action) {
         delete cartItems[id];
       }
       total = calcTotal(state.items, cartItems);
-      return { ...state, cartItems: cartItems, cartTotal: total };
+      return { ...state, cartItems, cartTotal: total };
 
     } else {
       return state;

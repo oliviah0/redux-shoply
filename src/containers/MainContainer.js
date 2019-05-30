@@ -1,6 +1,4 @@
-import React, { Component } from "react";
 import { connect } from "react-redux";
-import { add, remove } from "../actions";
 import Main from "../components/Main";
 
 

@@ -6,13 +6,11 @@ class Cart extends Component {
 
   render() {
     const { cartItems, items } = this.props;
-    let counter = 0;
-    let rows = Object.entries(cartItems).map((item) => {
+    let rows = Object.entries(cartItems).map((item, idx) => {
       let [id, qty] = item;
-      counter++;
       return (
         <tr>
-          <th scope="row">{counter}</th>
+          <th scope="row">{idx + 1}</th>
           <td>{items[id].name}</td>
           <td>{items[id].price}</td>
           <td>{qty}</td>
